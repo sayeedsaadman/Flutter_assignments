@@ -1,65 +1,107 @@
-
 import 'package:flutter/material.dart';
 
-void main () {
-  runApp(Myapp());
+void main() {
+  runApp(MyApp());
 }
-class Myapp extends StatelessWidget {
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
-      debugShowCheckedModeBanner:true,
-      home: Scaffold(
-        backgroundColor: Colors.white, //set clr to backgrnd
-        appBar: AppBar(
-          toolbarHeight: 100,
-          backgroundColor: Colors.green,// appbar er clr change
-          centerTitle: true, // appbar er text centre er jnno command
-
-          title:  Text("Home",style: TextStyle(
-            fontWeight: FontWeight.bold
-          ),),
-          leading: Icon(Icons.add_business,color: Colors.white,size: 20,),
-          actions: [Icon(Icons.search),],
-          elevation: 70,
-        ),
-        body: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center, // edit with main axis
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text("This is mod 5 Assignment",style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black
-                ),),
-                SizedBox(height: 10),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Text("My ",
-                      style: TextStyle(
-                      color: Colors.pinkAccent,
-                        fontSize: 20
-                    ),),
-                    Text("Phone ",style: TextStyle(
-                      color: Colors.cyan,
-                      fontSize: 10
-                    ),),
-                    Text("name ",style: TextStyle(
-                      color: Colors.purple,
-                      fontSize: 14
-                    ),),
-                    Text("Samsung",style: TextStyle(
-                      color: Colors.orange,
-                      fontSize: 22
-                    ),)
-                  ],
-                )
-              ],
-            )),
-      ),
-     // title: "Valley",
+    return MaterialApp(
+      home: HomeScreen(),
+      title: 'assignment 2',
     );
   }
 }
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context)
+  {
+    return Scaffold(
+
+      appBar: AppBar(
+        title: Center(child: Text("Photo Gallery")),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Text(
+                "Welcome to My Photo Gallery!",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 30,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: TextField(
+                decoration: InputDecoration(
+                  labelText: "Search for photo..",
+                  border: OutlineInputBorder(),
+                ),
+              ),
+            ),
+            GridView.builder(
+              shrinkWrap: true,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 3,
+              ),
+              itemCount: 6,
+              itemBuilder: (context, index) {
+                return GestureDetector(
+                  onTap: () {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text("Image clicked"),
+                      ),
+                    );
+                  },
+                    child: Column(
+                      children: [
+                        Image.network(
+                          "https://th.bing.com/th/id/R.9b0b8859a140a9b61a29ae73850dd420?rik=mGpBFISO2drkiA&pid=ImgRaw&r=0",
+                          height: 100,
+                          width: 100,
+                          fit: BoxFit.cover,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Text("Photo ${index + 1}"),
+                        ),
+                      ],
+                    ),
+                );
+              },
+            ),
+
+            ElevatedButton(
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text("Photos Uploaded !"),
+                  ),
+                );
+              },
+              child: Container(
+              padding: EdgeInsets.all(10.0),
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+              ),
+                child: Icon(
+                  Icons.upload,
+                  size: 40,
+                ),
+            ),
+            ),
+          ],
+        ),
+      ),
+
+    );
+  }
+}
+
