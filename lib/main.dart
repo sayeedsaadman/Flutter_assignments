@@ -17,7 +17,7 @@ class Myapp extends StatelessWidget {
           centerTitle: true, // appbar er text centre er jnno command
 
           title:  Text("Home",style: TextStyle(
-            fontWeight: FontWeight.bold
+              fontWeight: FontWeight.bold
           ),),
           leading: Icon(Icons.add_business,color: Colors.white,size: 20,),
           actions: [Icon(Icons.search),],
@@ -29,8 +29,8 @@ class Myapp extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text("This is mod 5 Assignment",style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black
                 ),),
                 SizedBox(height: 10),
                 Row(
@@ -39,27 +39,27 @@ class Myapp extends StatelessWidget {
                   children: [
                     Text("My ",
                       style: TextStyle(
-                      color: Colors.pinkAccent,
-                        fontSize: 20
-                    ),),
+                          color: Colors.pinkAccent,
+                          fontSize: 20
+                      ),),
                     Text("Phone ",style: TextStyle(
-                      color: Colors.cyan,
-                      fontSize: 10
+                        color: Colors.cyan,
+                        fontSize: 10
                     ),),
                     Text("name ",style: TextStyle(
-                      color: Colors.purple,
-                      fontSize: 14
+                        color: Colors.purple,
+                        fontSize: 14
                     ),),
                     Text("Samsung",style: TextStyle(
-                      color: Colors.orange,
-                      fontSize: 22
+                        color: Colors.orange,
+                        fontSize: 22
                     ),)
                   ],
                 )
               ],
             )),
       ),
-     // title: "Valley",
+      // title: "Valley",
     );
   }
 }
