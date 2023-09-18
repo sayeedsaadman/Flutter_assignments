@@ -77,7 +77,27 @@ class HomeScreen extends StatelessWidget {
                 );
               },
             ),
-
+            ListTile(
+              title: Text("Photo 1"),
+              subtitle: Text("description about photo 1"),
+              leading: CircleAvatar(
+                backgroundImage: NetworkImage('https://th.bing.com/th/id/R.9b0b8859a140a9b61a29ae73850dd420?rik=mGpBFISO2drkiA&pid=ImgRaw&r=0'),
+              ),
+            ),
+            ListTile(
+              title: Text("Photo 2"),
+              subtitle: Text("description about photo 2"),
+              leading: CircleAvatar(
+                backgroundImage: NetworkImage('https://th.bing.com/th/id/R.9b0b8859a140a9b61a29ae73850dd420?rik=mGpBFISO2drkiA&pid=ImgRaw&r=0'),
+              ),
+            ),
+            ListTile(
+              title: Text("Photo 3"),
+              subtitle: Text("description about photo 3"),
+              leading: CircleAvatar(
+                backgroundImage: NetworkImage('https://th.bing.com/th/id/R.9b0b8859a140a9b61a29ae73850dd420?rik=mGpBFISO2drkiA&pid=ImgRaw&r=0'),
+              ),
+            ),
             ElevatedButton(
               onPressed: () {
                 ScaffoldMessenger.of(context).showSnackBar(
@@ -86,21 +106,16 @@ class HomeScreen extends StatelessWidget {
                   ),
                 );
               },
-              child: Container(
-              padding: EdgeInsets.all(10.0),
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-              ),
-                child: Icon(
-                  Icons.upload,
-                  size: 40,
+                child: Center(
+                  child: Icon(
+                    Icons.upload,
+                    size: 40,
+                  ),
                 ),
-            ),
             ),
           ],
         ),
       ),
-
     );
   }
 }
