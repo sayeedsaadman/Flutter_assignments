@@ -95,7 +95,6 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
-
   void addtodo(Todo todo){
     tasks.add(todo);
     setState(() {});

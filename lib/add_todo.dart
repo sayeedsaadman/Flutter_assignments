@@ -24,7 +24,6 @@ class _AddTodoState extends State<AddTodo> {
     addDetailsController.dispose();
     super.dispose();
   }
-
   @override
   Widget build(BuildContext context) {
     return Form(

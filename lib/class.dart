@@ -4,5 +4,4 @@ class Todo{
   Todo({
     required this.title, required this.details,
   });
-
 }
