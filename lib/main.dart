@@ -1,18 +1,17 @@
-import 'package:flutter/cupertino.dart';
+import 'photo_list_screen.dart';
 import 'package:flutter/material.dart';
-import 'home_page.dart';
-void main(){
-  runApp(MyApp());
+
+void main() {
+  runApp(const CrudApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class CrudApp extends StatelessWidget {
+  const CrudApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: MyHomePage(),
+    return const MaterialApp(
+      home: PhotoListScreen(),
     );
   }
 }
